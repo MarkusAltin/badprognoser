@@ -1,4 +1,8 @@
+import { Route, Routes } from "react-router-dom";
 import { Header } from "./components/Header/Header";
+import { Bottenhavet } from "./pages/Bottenhavet/Bottenhavet";
+import { Bottenviken } from "./pages/Bottenviken/Bottenviken";
+import { Home } from "./pages/Home/Home";
 
 function App():JSX.Element {
   return (
@@ -7,7 +11,11 @@ function App():JSX.Element {
         <Header />
       </header>
       <main>
-        
+      <Routes>
+      <Route path="/" element={<Home/>} />
+      <Route path="/bottenviken" element={<Bottenviken />} />
+      <Route path="/bottenhaver" element={<Bottenhavet />}  />
+    </Routes>
       </main>
       <footer>
 

@@ -1,3 +1,15 @@
 .home {
     text-align: center;
+
+    .link-containers {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .links {
+        height: 50px;
+        width: 200px;
+        margin: 50px 0;
+    }
 }
