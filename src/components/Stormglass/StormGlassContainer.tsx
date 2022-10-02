@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Carousel } from "../Carousel/Carousel";
 import { StormGlassHour } from "./StormGlassHour";
 
 const dateFourDaysFromNow = (): string => {
@@ -30,7 +31,16 @@ export const StormGlassContainer = () => {
 
     return (
         <div>StormGlass
-            <StormGlassHour date={new Date()} forecast="noaa" waveDirection={180} waveHeight={1.2} wavePeriod={4.5} />
+            <Carousel slides={[
+                <StormGlassHour date={new Date()} forecast="noaa" waveDirection={180} waveHeight={1.2} wavePeriod={4.5} />,
+                <StormGlassHour date={new Date()} forecast="noaa" waveDirection={180} waveHeight={1.2} wavePeriod={4.5} />,
+                <StormGlassHour date={new Date()} forecast="noaa" waveDirection={180} waveHeight={1.2} wavePeriod={4.5} />,
+                <StormGlassHour date={new Date()} forecast="noaa" waveDirection={180} waveHeight={1.2} wavePeriod={4.5} />,
+                <StormGlassHour date={new Date()} forecast="noaa" waveDirection={180} waveHeight={1.2} wavePeriod={4.5} />,
+                <StormGlassHour date={new Date()} forecast="noaa" waveDirection={180} waveHeight={1.2} wavePeriod={4.5} />,
+                <StormGlassHour date={new Date()} forecast="noaa" waveDirection={180} waveHeight={1.2} wavePeriod={4.5} />,
+                <StormGlassHour date={new Date()} forecast="noaa" waveDirection={180} waveHeight={1.2} wavePeriod={4.5} />,
+            ]} />
         </div>
     )
 }
