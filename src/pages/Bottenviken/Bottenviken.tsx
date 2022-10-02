@@ -6,7 +6,6 @@ export const Bottenviken = () => {
 
   return (
     <div className="bottenviken">
-      Bottenviken
       <StormGlassContainer />
       <Havsis />
     </div>

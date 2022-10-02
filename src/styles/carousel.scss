@@ -34,6 +34,7 @@
 
     .button {
         display: block;
+        text-align: center;
         margin: 0 10px;
         cursor: pointer;
         opacity: 1;
@@ -41,5 +42,10 @@
         background-color: transparent;
         align-self: center;
         border: none;
+    }
+
+    .button:hover {
+        border-bottom: 2px solid #000;
+        transition: 0.1s ease-in-out;
     }
 }

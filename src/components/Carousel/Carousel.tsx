@@ -38,9 +38,11 @@ export const Carousel = ({ slides }: Props) => {
             <div className="buttons">
                 <button className="button" onClick={previousSlide}>
                     <LeftArrow />
+                    <div className="underline"></div>
                 </button>
                 <button className="button" onClick={nextSlide}>
                     <RightArrow />
+                    <div className="underline"></div>
                 </button>
             </div>
         </div>
