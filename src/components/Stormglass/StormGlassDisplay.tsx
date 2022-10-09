@@ -5,9 +5,10 @@ interface Props {
     waveDirection: number;
     waveHeight: number;
     wavePeriod: number;
+    swellHeight: number;
 }
 
-export const StormGlassDisplay = ({ forecast, waveDirection, waveHeight, wavePeriod }: Props) => {
+export const StormGlassDisplay = ({ forecast, waveDirection, waveHeight, wavePeriod, swellHeight }: Props) => {
     return (
         <div className="stormglass-display">
             <div className="forecast border">
@@ -21,6 +22,9 @@ export const StormGlassDisplay = ({ forecast, waveDirection, waveHeight, wavePer
             </div>
             <div className="wave-period border">
                 <p>{`${wavePeriod}s`}</p>
+            </div>
+            <div className="wave-height border">
+                <p>{`${swellHeight}m`}</p>
             </div>
         </div>
     )
