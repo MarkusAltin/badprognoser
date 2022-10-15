@@ -1,17 +1,20 @@
+import { WavyLink } from "react-wavy-transitions";
 
 export const Home = () => {
   return (
     <div className='home'>
-      <div className="link-containers">
-        <a className='links' href="/bottenviken">
+      <nav>
+        <div className="link-containers">
+          <WavyLink to="/bottenviken" color="#006eff">
             Bottenviken
-        </a>
-      </div>
-      <div className="link-containers">
-        <a className='links'  href="/bottenhavet">
+          </WavyLink>
+        </div>
+        <div className="link-containers">
+          <WavyLink to="/bottenhavet" color="#006eff">
             Bottenhavet
-        </a>
-      </div>
+          </WavyLink>
+        </div>
+      </nav>
     </div>
   )
 }
