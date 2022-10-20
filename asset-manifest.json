@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/badprognoser/static/css/main.a1a00790.css",
+    "main.js": "/badprognoser/static/js/main.99e45ec1.js",
+    "index.html": "/badprognoser/index.html",
+    "main.a1a00790.css.map": "/badprognoser/static/css/main.a1a00790.css.map",
+    "main.99e45ec1.js.map": "/badprognoser/static/js/main.99e45ec1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a1a00790.css",
+    "static/js/main.99e45ec1.js"
+  ]
+}
