@@ -16,7 +16,7 @@ function App(): JSX.Element {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/bottenviken" element={<Bottenviken />} />
-          <Route path="/bottenhaver" element={<Bottenhavet />} />
+          <Route path="/bottenhavet" element={<Bottenhavet />} />
         </Routes>
       </main>
       <footer>
