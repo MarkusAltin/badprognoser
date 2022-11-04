@@ -5,14 +5,14 @@ import App from './App';
 import './styles/main.scss';
 
 const rootContainer = document.getElementById('root');
-if(!rootContainer) {
+if (!rootContainer) {
   throw new Error('Root container not found.');
 }
-  
+
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-    <App />
+    <BrowserRouter basename='/badprognoser'>
+      <App />
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
