@@ -12,9 +12,9 @@ function App(): JSX.Element {
       </header>
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/badprognoser/bottenviken" element={<Bottenviken />} />
-          <Route path="/badprognoser/bottenhavet" element={<Bottenhavet />} />
+          <Route path={process.env.PUBLIC_URL + '/'} element={<Home />} />
+          <Route path={process.env.PUBLIC_URL + "/badprognoser/bottenviken"} element={<Bottenviken />} />
+          <Route path={process.env.PUBLIC_URL + "/badprognoser/bottenhavet"} element={<Bottenhavet />} />
         </Routes>
       </main>
       <footer>
