@@ -5,12 +5,12 @@ export const Home = () => {
     <div className='home'>
       <nav>
         <div className="link-containers">
-          <a href="/badprognoser/bottenviken">
+          <a href="/bottenviken">
             Bottenviken
           </a>
         </div>
         <div className="link-containers">
-          <a href="/badprognoser/bottenhavet">
+          <a href="/bottenhavet">
             Bottenhavet
           </a>
         </div>
