@@ -6,7 +6,7 @@
 
     .wave-icon, .surfboard-icon {
         height: 130px;
-        margin: 30px 50px
+        margin: 30px 50px;
     }
 
     .app-heading {
@@ -24,4 +24,15 @@
         background-color: transparent;
         cursor: pointer;
       }
+
+    @media screen and (max-width: 800px) {
+        .wave-icon, .surfboard-icon {
+            height: 50px;
+            margin: 0 20px;
+        }
+
+        .app-heading {
+            font-size: 1.5rem;
+        }
+    }
 }
