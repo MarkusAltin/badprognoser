@@ -10,11 +10,12 @@ export const Accordion = ({ title, content }: Props) => {
     const [open, setOpen] = useState(false);
 
     return (
-        <div className="accordion">
+        <div className={open ? "accordion open" : "accordion"}>
             <div className="accordion-title" onClick={() => setOpen(!open)}>
                 <h2 className="title"> {title} </h2>
-                {/* <span className="plus"> {open ? "+" : "-"} </span> */}
-                <AccordionIcon />
+                <div>
+                    <AccordionIcon />
+                </div>
             </div>
             {open &&
                 <div className="accordion-content">
