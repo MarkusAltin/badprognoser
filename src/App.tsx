@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import { Header } from "./components/Header/Header";
 import { Bottenhavet } from "./pages/Bottenhavet/Bottenhavet";
 import { Bottenviken } from "./pages/Bottenviken/Bottenviken";
@@ -11,11 +11,11 @@ function App(): JSX.Element {
         <Header />
       </header>
       <main>
-        <Routes>
-          <Route path="#/" element={<Home />} />
-          <Route path="#/bottenviken" element={<Bottenviken />} />
-          <Route path="#/bottenhavet" element={<Bottenhavet />} />
-        </Routes>
+        <HashRouter>
+          <Route path="/" element={<Home />} />
+          <Route path="/bottenviken" element={<Bottenviken />} />
+          <Route path="/bottenhavet" element={<Bottenhavet />} />
+        </HashRouter>
       </main>
       <footer>
 
