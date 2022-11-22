@@ -12,9 +12,9 @@ function App(): JSX.Element {
       </header>
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/bottenviken" element={<Bottenviken />} />
-          <Route path="/bottenhavet" element={<Bottenhavet />} />
+          <Route path="#/" element={<Home />} />
+          <Route path="#/bottenviken" element={<Bottenviken />} />
+          <Route path="#/bottenhavet" element={<Bottenhavet />} />
         </Routes>
       </main>
       <footer>
