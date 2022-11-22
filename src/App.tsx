@@ -13,8 +13,8 @@ function App(): JSX.Element {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/bottenviken" element={<Bottenviken />} />
-          <Route path="/bottenhavet" element={<Bottenhavet />} />
+          <Route path="/badprognoser/bottenviken" element={<Bottenviken />} />
+          <Route path="/badprognoser/bottenhavet" element={<Bottenhavet />} />
         </Routes>
       </main>
       <footer>
