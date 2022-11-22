@@ -11,7 +11,7 @@ if (!rootContainer) {
 
 ReactDOM.render(
   <React.StrictMode>
-    <HashRouter>
+    <HashRouter basename="/badprognoser">
       <App />
     </HashRouter>
   </React.StrictMode>,
