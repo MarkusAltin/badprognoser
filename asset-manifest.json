@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/badprognoser/static/css/main.1a730cd6.css",
-    "main.js": "/badprognoser/static/js/main.6ce957c9.js",
+    "main.js": "/badprognoser/static/js/main.be13df3e.js",
     "index.html": "/badprognoser/index.html",
     "main.1a730cd6.css.map": "/badprognoser/static/css/main.1a730cd6.css.map",
-    "main.6ce957c9.js.map": "/badprognoser/static/js/main.6ce957c9.js.map"
+    "main.be13df3e.js.map": "/badprognoser/static/js/main.be13df3e.js.map"
   },
   "entrypoints": [
     "static/css/main.1a730cd6.css",
-    "static/js/main.6ce957c9.js"
+    "static/js/main.be13df3e.js"
   ]
 }
