@@ -1,5 +1,6 @@
 import { Accordion } from "../../components/Accordion/Accordion"
 import { Havsis } from "../../components/Havsis/Havsis"
+import { SmhiContainer } from "../../components/Smhi/Smhi"
 import { StormGlassContainer } from "../../components/Stormglass/StormGlassContainer"
 import { WindfinderWidget } from "../../components/Windfinder/WindfinderWidget"
 
@@ -30,6 +31,7 @@ export const Bottenhavet = () => {
             <Accordion title="Windfinder" content={
               <WindfinderWidget location="salusand" />
             } />
+            <SmhiContainer spot={"salusand"} />
           </>
         } /></div>
       <div className="border">
