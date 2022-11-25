@@ -1,8 +1,10 @@
 import { Accordion } from "../../components/Accordion/Accordion"
+import { BalticSeaBuoy } from "../../components/BalticSeaBuoy/BalticSeaBuoy"
 import { Havsis } from "../../components/Havsis/Havsis"
 import { SmhiContainer } from "../../components/Smhi/Smhi"
 import { StormGlassContainer } from "../../components/Stormglass/StormGlassContainer"
 import { WindfinderWidget } from "../../components/Windfinder/WindfinderWidget"
+import { WindyLink } from "../../components/Windy/WindyLink"
 
 export const Bottenhavet = () => {
   const holm = { lat: 63.613820, lon: 20.544179 };
@@ -20,6 +22,11 @@ export const Bottenhavet = () => {
             <Accordion title="Windfinder" content={
               <WindfinderWidget location="holmögadd" />
             } />
+            <div className="spot-links">
+              <SmhiContainer spot={"rovogern"} />
+              <BalticSeaBuoy spot={"rovogern"} />
+              <WindyLink spot={"rovogern"} />
+            </div>
           </>
         } /></div>
       <div className="border">
@@ -31,7 +38,12 @@ export const Bottenhavet = () => {
             <Accordion title="Windfinder" content={
               <WindfinderWidget location="salusand" />
             } />
-            <SmhiContainer spot={"salusand"} />
+            <div className="spot-links">
+              <SmhiContainer spot={"salusand"} />
+              <SmhiContainer spot={"jarnas"} />
+              <BalticSeaBuoy spot={"salusand"} />
+              <WindyLink spot={"salusand"} />
+            </div>
           </>
         } /></div>
       <div className="border">
@@ -43,9 +55,13 @@ export const Bottenhavet = () => {
             <Accordion title="Windfinder" content={
               <WindfinderWidget location="skagsudde" />
             } />
+            <div className="spot-links">
+              <BalticSeaBuoy spot={"skagsudde"} />
+              <WindyLink spot={"skagsudde"} />
+            </div>
           </>
         } /></div>
-      <Havsis />
+      <Havsis spot={"salusand"} />
     </div>
   )
 }

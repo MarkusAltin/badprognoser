@@ -1,4 +1,4 @@
-export const getStormGlassData = (latitude: number, longitude: number, params: string, endDate: string): any => {
+export const getStormGlassData = (latitude: number, longitude: number, params: string, endDate: string) => {
   const key =
     "bed50c26-40eb-11ed-a3a1-0242ac130002-bed50c9e-40eb-11ed-a3a1-0242ac130002";
 
@@ -10,18 +10,13 @@ export const getStormGlassData = (latitude: number, longitude: number, params: s
       },
     }
   )
-    .then(async (res) => {
-       const response = await res.json()
-
-       if (response.status === 200) {
-        return JSON.stringify(response.data);
-       }
-       console.log(JSON.stringify(response.data));
-       return response;
-      })
-    // .then((data) => {
-    //   console.log("Success:", JSON.stringify(data));
-    // })
+    .then((response) => {
+      response.json()
+    })
+    .then((data) => {
+      console.log("Success:", JSON.stringify(data));
+      return data;
+    })
     .catch((error) => {
       console.error("Error:", error);
     });

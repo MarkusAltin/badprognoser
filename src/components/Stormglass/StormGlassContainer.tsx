@@ -38,9 +38,9 @@ export const StormGlassContainer = ({ longitude, latitude }: Props) => {
         if (!data || data.meta.end < sixHoursAgo) {
             const response = getStormGlassData(latitude, longitude, params, date);
             console.log(response);
-            if (response) {
-                setData(response)
-            }
+            // if (response) {
+            //     setData(response)
+            // }
         }
     }, [])
 

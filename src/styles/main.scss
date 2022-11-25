@@ -29,6 +29,12 @@ code {
   min-height: 100vh;
 }
 
+.spot-links {
+  display: flex;
+  gap: 10px;
+  padding: 0 10px 10px 10px
+}
+
 main {
   display: flex;
   justify-content: center;
@@ -47,4 +53,10 @@ a {
 a:hover {
   background-color: rgb(0, 110, 255);
   cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  .spot-links {
+    justify-content: space-between;
+  }
 }

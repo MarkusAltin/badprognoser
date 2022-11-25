@@ -1,7 +1,10 @@
 import { Accordion } from "../../components/Accordion/Accordion";
+import { BalticSeaBuoy } from "../../components/BalticSeaBuoy/BalticSeaBuoy";
 import { Havsis } from "../../components/Havsis/Havsis";
+import { SmhiContainer } from "../../components/Smhi/Smhi";
 import { StormGlassContainer } from "../../components/Stormglass/StormGlassContainer";
 import { WindfinderWidget } from "../../components/Windfinder/WindfinderWidget";
+import { WindyLink } from "../../components/Windy/WindyLink";
 
 
 export const Bottenviken = () => {
@@ -20,6 +23,11 @@ export const Bottenviken = () => {
             <Accordion title="Windfinder" content={
               <WindfinderWidget location="bjuröklubb" />
             } />
+            <div className="spot-links">
+              <SmhiContainer spot={"bjuroklubb"} />
+              <BalticSeaBuoy spot={"bjuroklubb"} />
+              <WindyLink spot={"bjuroklubb"} />
+            </div>
           </>
         } /> </div>
       <div className="border">
@@ -28,6 +36,11 @@ export const Bottenviken = () => {
             <Accordion title="StormGlass" content={
               <StormGlassContainer latitude={ratan.lat} longitude={ratan.lon} />
             } />
+            <div className="spot-links">
+              <SmhiContainer spot={"ratan"} />
+              <BalticSeaBuoy spot={"ratan"} />
+              <WindyLink spot={"ratan"} />
+            </div>
           </>
         } /> </div>
       <div className="border">
@@ -39,9 +52,14 @@ export const Bottenviken = () => {
             <Accordion title="Windfinder" content={
               <WindfinderWidget location="holmön" />
             } />
+            <div className="spot-links">
+              <SmhiContainer spot={"holmon"} />
+              <BalticSeaBuoy spot={"holmon"} />
+              <WindyLink spot={"holmon"} />
+            </div>
           </>
         } /> </div>
-      <Havsis />
+      <Havsis spot={"bjuroklubb"} />
     </div>
   )
 }

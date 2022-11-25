@@ -1,9 +1,15 @@
 .smhi {
-    margin: 10px 0;
+    // margin: 0 8px 10px 8px;
 
     .link {
         height: 30px;
         width: 80px;
         border: 1px solid #fff;
     }
+    
+    @media screen and (max-width: 800px) {
+        .salu {
+            width: 60px !important;
+        }
+      }
 }
