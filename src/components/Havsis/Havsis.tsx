@@ -1,5 +1,5 @@
 
-export const Havsis = ({spot}: {spot: string}) => {
+export const Havsis = ({ spot }: { spot: string }) => {
 
   const getLink = (spot: string): string => {
     switch (spot) {
@@ -16,6 +16,9 @@ export const Havsis = ({spot}: {spot: string}) => {
       </a>
       <a className='havsis-link' href={getLink(spot)} target="_blank" rel="noreferrer">
         MSW
+      </a>
+      <a className='havsis-link' href="https://balticseabuoy.com/" target="_blank" rel="noreferrer">
+        Baltic sea buoy
       </a>
     </div>
   )

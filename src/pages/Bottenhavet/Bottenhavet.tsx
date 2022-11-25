@@ -56,6 +56,7 @@ export const Bottenhavet = () => {
               <WindfinderWidget location="skagsudde" />
             } />
             <div className="spot-links">
+              <SmhiContainer spot={"skagsudde"} />
               <BalticSeaBuoy spot={"skagsudde"} />
               <WindyLink spot={"skagsudde"} />
             </div>
