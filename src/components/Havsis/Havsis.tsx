@@ -18,7 +18,7 @@ export const Havsis = ({ spot }: { spot: string }) => {
         MSW
       </a>
       <a className='havsis-link' href="https://balticseabuoy.com/" target="_blank" rel="noreferrer">
-        Baltic sea buoy
+        Buoy
       </a>
     </div>
   )
