@@ -12,6 +12,7 @@ export const BalticSeaBuoy = ({ spot }: { spot: string }) => {
     }
 
     return <div className="smhi">
-        <a className={spot === "salusand" ? "link salu" : "link"} href={getLink(spot)} > Buoy </a>
+        <a className={spot === "salusand" ? "link salu" : "link"} href={getLink(spot)}
+            target="_blank" rel="noreferrer"> Buoy </a>
     </div>
 }

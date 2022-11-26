@@ -12,6 +12,7 @@ export const WindyLink = ({ spot }: { spot: string }) => {
     }
 
     return <div className="smhi">
-        <a className={spot === "salusand" ? "link salu" : "link"} href={getLink(spot)} > Windy </a>
+        <a className={spot === "salusand" ? "link salu" : "link"} href={getLink(spot)}
+            target="_blank" rel="noreferrer"> Windy </a>
     </div>
 }

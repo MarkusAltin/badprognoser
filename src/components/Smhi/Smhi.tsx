@@ -19,6 +19,7 @@ export const SmhiContainer = ({ spot }: SmhiContainerProps) => {
     }
 
     return <div className="smhi">
-        <a className={spot === "salusand" || spot === "jarnas" ? "link salu" : "link"} href={getLink(spot)} > Smhi </a>
+        <a className={spot === "salusand" || spot === "jarnas" ? "link salu" : "link"} href={getLink(spot)}
+            target="_blank" rel="noreferrer"> Smhi </a>
     </div>
 }

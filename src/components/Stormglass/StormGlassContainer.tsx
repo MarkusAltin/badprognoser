@@ -27,6 +27,7 @@ export const StormGlassContainer = ({ longitude, latitude, spot }: Props) => {
 
 
     useEffect(() => {
+        console.log(window.localStorage.getItem(spot))
         const fetch = async () => {
             if (window.localStorage.getItem(spot) === null) {
                 const response = await getStormGlassData(latitude, longitude, params, dateTwoDaysFromNow());
@@ -46,7 +47,7 @@ export const StormGlassContainer = ({ longitude, latitude, spot }: Props) => {
                     return (<StormGlassHour forecastHour={hour} />)
                 })
                 } />
-                : <span className="robin"> Robin nu har du tryck för mycket!! </span>
+                : <span className="robin"> Robin nu har du tryckt för mycket!! </span>
             }
         </div>
     )
