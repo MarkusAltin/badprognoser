@@ -18,7 +18,7 @@ export const Bottenviken = () => {
         <Accordion title="Bjuröklubb" content={
           <>
             <Accordion title="StormGlass" content={
-              <StormGlassContainer latitude={bjur.lat} longitude={bjur.lon} />
+              <StormGlassContainer latitude={bjur.lat} longitude={bjur.lon} spot="bjuroklubb" />
             } />
             <Accordion title="Windfinder" content={
               <WindfinderWidget location="bjuröklubb" />
@@ -34,7 +34,7 @@ export const Bottenviken = () => {
         <Accordion title="Ratan" content={
           <>
             <Accordion title="StormGlass" content={
-              <StormGlassContainer latitude={ratan.lat} longitude={ratan.lon} />
+              <StormGlassContainer latitude={ratan.lat} longitude={ratan.lon} spot="ratan" />
             } />
             <div className="spot-links">
               <SmhiContainer spot={"ratan"} />
@@ -47,7 +47,7 @@ export const Bottenviken = () => {
         <Accordion title="Holmön" content={
           <>
             <Accordion title="StormGlass" content={
-              <StormGlassContainer latitude={holm.lat} longitude={holm.lon} />
+              <StormGlassContainer latitude={holm.lat} longitude={holm.lon} spot="holmon" />
             } />
             <Accordion title="Windfinder" content={
               <WindfinderWidget location="holmön" />

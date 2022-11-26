@@ -1,6 +1,6 @@
 import { Carousel } from "../Carousel/Carousel";
 import { StormGlassHour } from "./StormGlassHour";
-import { stormGlassData2 } from "../../utils/exampleData";
+// import { stormGlassData2 } from "../../utils/exampleData";
 import { useEffect, useState } from "react";
 import { getStormGlassData } from "../../utils/http";
 
@@ -8,11 +8,6 @@ const dateTwoDaysFromNow = (): string => {
     const date = new Date();
     date.setDate(date.getDate() + 2);
     return date.toISOString();
-}
-
-const sixHoursBefore = (date: Date): Date => {
-    date.setHours(date.getHours() - 6);
-    return date;
 }
 interface Response {
     hours: any[];
@@ -22,34 +17,37 @@ interface Response {
 interface Props {
     longitude: number;
     latitude: number;
+    spot: string
 }
 
-export const StormGlassContainer = ({ longitude, latitude }: Props) => {
-    const exampleData = stormGlassData2();
+export const StormGlassContainer = ({ longitude, latitude, spot }: Props) => {
     const [data, setData] = useState<Response>();
     const params = "swellDirection,swellHeight,swellPeriod,waveDirection,waveHeight,wavePeriod";
-    const date = dateTwoDaysFromNow();
-    // const data = getStormGlassData(latitude, longitude, params, date);
-    const sixHoursAgo = sixHoursBefore(new Date(date));
 
 
 
     useEffect(() => {
-        if (!data || data.meta.end < sixHoursAgo) {
-            const response = getStormGlassData(latitude, longitude, params, date);
-            console.log(response);
-            // if (response) {
-            //     setData(response)
-            // }
+        const fetch = async () => {
+            if (window.localStorage.getItem(spot) === null) {
+                const response = await getStormGlassData(latitude, longitude, params, dateTwoDaysFromNow());
+                if (response) {
+                    setData(response.data)
+                    window.localStorage.setItem(spot, spot)
+                }
+            }
         }
-    }, [])
+        fetch();
+    }, [latitude, longitude, spot])
 
     return (
         <div>
-            <Carousel slides={exampleData.hours.map((hour: any) => {
-                return (<StormGlassHour forecastHour={hour} />)
-            })
-            } />
+            {data ?
+                <Carousel slides={data.hours.map((hour: any) => {
+                    return (<StormGlassHour forecastHour={hour} />)
+                })
+                } />
+                : <span className="robin"> Robin nu har du tryck för mycket!! </span>
+            }
         </div>
     )
 }
