@@ -11,20 +11,30 @@ export const getStormGlassData = async (latitude: number, longitude: number, par
 
 
 const request = async (latitude: number, longitude: number, params: string, endDate: string): Promise<ApiResponse> => {
-  const key =
-    "bed50c26-40eb-11ed-a3a1-0242ac130002-bed50c9e-40eb-11ed-a3a1-0242ac130002";
-  
+  const keys = [
+    "bed50c26-40eb-11ed-a3a1-0242ac130002-bed50c9e-40eb-11ed-a3a1-0242ac130002",
+    "05e28a00-6e7b-11ed-bce5-0242ac130002-05e28ab4-6e7b-11ed-bce5-0242ac130002",
+    "7ffc3bea-6e7d-11ed-bc36-0242ac130002-7ffc3ca8-6e7d-11ed-bc36-0242ac130002",
+    "b9052efe-6e84-11ed-92e6-0242ac130002-b9052fa8-6e84-11ed-92e6-0242ac130002"
+
+  ];
+
+  for (let i = 0; i < keys.length; i++) {
+
   const response = await fetch(
     `https://api.stormglass.io/v2/weather/point?lat=${latitude}&lng=${longitude}&params=${params}&end=${endDate}`,
     {
       headers: {
-        Authorization: key,
+        Authorization: keys[i],
       },
     }
   )
   if (!response.ok) {
+    if (response.status === 402) {
+      console.error("402 trying next api key");
+      continue;
+    }
     const json = await response.json();
-    console.error(json)
     return {
       ok: false,
       status: response.status,
@@ -32,17 +42,7 @@ const request = async (latitude: number, longitude: number, params: string, endD
     }
   }
   const json = await response.json();
-  console.log(json)
   return {ok: true, status: response.status, data: json}
-
-    // .then((response) => {
-    //   response.json()
-    // })
-    // .then((data) => {
-    //   console.log("Success:", JSON.stringify(data));
-    //   return data;
-    // })
-    // .catch((error) => {
-    //   console.error("Error:", error);
-    // });
+}
+return {ok: false, status: 500}
 }

@@ -7,14 +7,10 @@ interface Props {
 }
 
 export const Accordion = ({ title, content }: Props) => {
-    const [open, setOpen] = useState(window.localStorage.getItem(title) === "open" ? true : false);
-    console.log(window.localStorage.getItem(title))
+    const [open, setOpen] = useState(false);
     return (
         <div className={open ? "accordion open" : "accordion"}>
-            <div className="accordion-title" onClick={() => {
-                setOpen(!open)
-                window.localStorage.setItem(title, open.toString());
-            }}>
+            <div className="accordion-title" onClick={() => setOpen(!open)}>
                 <h2 className="title"> {title} </h2>
                 <div>
                     <AccordionIcon />
