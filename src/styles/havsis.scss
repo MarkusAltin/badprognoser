@@ -1,10 +1,19 @@
 .havsis {
   display: flex;
   gap: 10px;
+  margin-bottom: 10px;
 
   .havsis-link {
     height: 50px;
     width: 200px;
     border: 2px solid #000;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .flex {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
   }
 }

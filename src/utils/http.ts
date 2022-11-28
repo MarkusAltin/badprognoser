@@ -15,7 +15,9 @@ const request = async (latitude: number, longitude: number, params: string, endD
     "bed50c26-40eb-11ed-a3a1-0242ac130002-bed50c9e-40eb-11ed-a3a1-0242ac130002",
     "05e28a00-6e7b-11ed-bce5-0242ac130002-05e28ab4-6e7b-11ed-bce5-0242ac130002",
     "7ffc3bea-6e7d-11ed-bc36-0242ac130002-7ffc3ca8-6e7d-11ed-bc36-0242ac130002",
-    "b9052efe-6e84-11ed-92e6-0242ac130002-b9052fa8-6e84-11ed-92e6-0242ac130002"
+    "b9052efe-6e84-11ed-92e6-0242ac130002-b9052fa8-6e84-11ed-92e6-0242ac130002",
+    "5bdbd1b2-6f45-11ed-bc36-0242ac130002-5bdbd216-6f45-11ed-bc36-0242ac130002",
+    "685e2fac-6f45-11ed-a654-0242ac130002-685e3024-6f45-11ed-a654-0242ac130002"
 
   ];
 
