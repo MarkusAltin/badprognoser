@@ -1,0 +1,1 @@
+export type spots = "bjuröklubb" | "holmön" | "holmögadd" | "salusand" | "skagsudde" | "harnosand";

@@ -17,9 +17,10 @@ interface BottenhavetProps {
 }
 
 export const Bottenhavet = ({ holmogaddData, salusandData, skagsuddeData, setHolmogaddData, setSalusandData, setSkagsuddeData }: BottenhavetProps) => {
-  const holm = { lat: 63.613820, lon: 20.544179 };
-  const salu = { lat: 63.383019, lon: 19.363742 };
-  const skag = { lat: 63.162019, lon: 19.029801 };
+  const holmo = { lat: 63.613820, lon: 20.544179 };
+  const salusand = { lat: 63.383019, lon: 19.363742 };
+  const skagsudde = { lat: 63.162019, lon: 19.029801 };
+  const harnosand = { lat: 62.605303, lon: 18.088232 };
 
   return (
     <div className="bottenhavet">
@@ -27,7 +28,7 @@ export const Bottenhavet = ({ holmogaddData, salusandData, skagsuddeData, setHol
         <Accordion title="Holmögadd" content={
           <>
             <Accordion title="StormGlass" content={
-              <StormGlassContainer latitude={holm.lat} longitude={holm.lon} spot="holmogadd" data={holmogaddData} setData={(data) => setHolmogaddData(data)} />
+              <StormGlassContainer latitude={holmo.lat} longitude={holmo.lon} spot="holmogadd" data={holmogaddData} setData={(data) => setHolmogaddData(data)} />
             } />
             <Accordion title="Windfinder" content={
               <WindfinderWidget location="holmögadd" />
@@ -43,7 +44,7 @@ export const Bottenhavet = ({ holmogaddData, salusandData, skagsuddeData, setHol
         <Accordion title="Salusand" content={
           <>
             <Accordion title="StormGlass" content={
-              <StormGlassContainer latitude={salu.lat} longitude={salu.lon} spot="salusand" data={salusandData} setData={(data) => setSalusandData(data)} />
+              <StormGlassContainer latitude={salusand.lat} longitude={salusand.lon} spot="salusand" data={salusandData} setData={(data) => setSalusandData(data)} />
             } />
             <Accordion title="Windfinder" content={
               <WindfinderWidget location="salusand" />
@@ -60,7 +61,7 @@ export const Bottenhavet = ({ holmogaddData, salusandData, skagsuddeData, setHol
         <Accordion title="Skagsudde" content={
           <>
             <Accordion title="StormGlass" content={
-              <StormGlassContainer latitude={skag.lat} longitude={skag.lon} spot="skagsudde" data={skagsuddeData} setData={(data) => setSkagsuddeData(data)} />
+              <StormGlassContainer latitude={skagsudde.lat} longitude={skagsudde.lon} spot="skagsudde" data={skagsuddeData} setData={(data) => setSkagsuddeData(data)} />
             } />
             <Accordion title="Windfinder" content={
               <WindfinderWidget location="skagsudde" />
@@ -69,6 +70,22 @@ export const Bottenhavet = ({ holmogaddData, salusandData, skagsuddeData, setHol
               <SmhiContainer spot={"skagsudde"} />
               <BalticSeaBuoy spot={"skagsudde"} />
               <WindyLink spot={"skagsudde"} />
+            </div>
+          </>
+        } /></div>
+      <div className="border">
+        <Accordion title="Härnösand" content={
+          <>
+            <Accordion title="StormGlass" content={
+              <StormGlassContainer latitude={harnosand.lat} longitude={harnosand.lon} spot="skagsudde" data={skagsuddeData} setData={(data) => setSkagsuddeData(data)} />
+            } />
+            <Accordion title="Windfinder" content={
+              <WindfinderWidget location="harnosand" />
+            } />
+            <div className="spot-links">
+              <SmhiContainer spot={"harnosand"} />
+              <BalticSeaBuoy spot={"harnosand"} />
+              <WindyLink spot={"harnosand"} />
             </div>
           </>
         } /></div>

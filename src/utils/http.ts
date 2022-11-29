@@ -19,8 +19,8 @@ const request = async (latitude: number, longitude: number, params: string, endD
     "5bdbd1b2-6f45-11ed-bc36-0242ac130002-5bdbd216-6f45-11ed-bc36-0242ac130002",
     "685e2fac-6f45-11ed-a654-0242ac130002-685e3024-6f45-11ed-a654-0242ac130002",
     "3f1acd88-6f4c-11ed-bc36-0242ac130002-3f1acdf6-6f4c-11ed-bc36-0242ac130002",
-    "d29017e2-6f49-11ed-92e6-0242ac130002-d290185a-6f49-11ed-92e6-0242ac130002"
-
+    "d29017e2-6f49-11ed-92e6-0242ac130002-d290185a-6f49-11ed-92e6-0242ac130002",
+    "1cd36d78-6f49-11ed-a138-0242ac130002-1cd36df0-6f49-11ed-a138-0242ac130002"
   ];
 
   for (let i = 0; i < keys.length; i++) {

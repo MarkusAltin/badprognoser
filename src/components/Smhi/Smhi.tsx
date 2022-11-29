@@ -14,6 +14,7 @@ export const SmhiContainer = ({ spot }: SmhiContainerProps) => {
             case "jarnas": return "https://www.smhi.se/vader/prognoser/ortsprognoser/q/J%C3%A4rn%C3%A4sklubb/Nordmaling/2703262";
             case "salusand": return "https://www.smhi.se/vader/prognoser/ortsprognoser/q/Norra%20Fillingsviken/%C3%96rnsk%C3%B6ldsvik/2603213";
             case "skagsudde": return "https://www.smhi.se/vader/prognoser/ortsprognoser/q/Skeppsmalen/%C3%96rnsk%C3%B6ldsvik/2677693";
+            case "harnosand": return "https://www.smhi.se/vader/prognoser/ortsprognoser/q/Smitingsviken/H%C3%A4rn%C3%B6sand/2602976";
             default: return ""
         }
     }
