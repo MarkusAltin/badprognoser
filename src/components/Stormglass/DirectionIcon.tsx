@@ -2,7 +2,7 @@
 
 export const DirectionIcon = ({ direction }: { direction: number }) => {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={"35"} height={"35"} style={{ transform: `rotate(${direction + 90}deg)` }}>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={"30"} height={"30"} style={{ transform: `rotate(${direction + 90}deg)` }}>
             <g data-name="10-Turn right">
                 <circle cx="32" cy="32" r="26" style={{ fill: "#fbfbfb" }} />
                 <path d="M32 1a31 31 0 1 0 31 31A31 31 0 0 0 32 1zm0 57a26 26 0 1 1 26-26 26 26 0 0 1-26 26z" style={{ fill: "#48befd" }} />
