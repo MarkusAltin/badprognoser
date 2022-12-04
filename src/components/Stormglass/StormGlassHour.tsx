@@ -1,3 +1,4 @@
+import { hasDaylight } from "../../utils/daylight";
 import { StormGlassDisplay } from "./StormGlassDisplay";
 
 interface Props {
@@ -9,19 +10,19 @@ export const StormGlassHour = ({ forecastHour }: Props) => {
     const time = `${new Date(forecastHour.time).getHours()}:${new Date(forecastHour.time).getMinutes()}0`;
 
     return (
-        <div className="stormglass-hour border">
-            <div className="time border">
+        <div className="stormglass-hour">
+            <div className={hasDaylight(forecastHour.time) ? "time border" : "time dark-border"}>
                 <h3> {dateOnly} </h3>
                 <h3> {time} </h3>
             </div>
             <div className="rows">
                 <div className="row">
                     <StormGlassDisplay forecast="noaa" waveDirection={forecastHour.waveDirection.noaa} waveHeight={forecastHour.waveHeight.noaa ?? 0}
-                        wavePeriod={forecastHour.wavePeriod.noaa ?? 0} swellHeight={forecastHour.swellHeight.noaa ?? 0} />
+                        wavePeriod={forecastHour.wavePeriod.noaa ?? 0} swellHeight={forecastHour.swellHeight.noaa ?? 0} hasDaylight={hasDaylight(forecastHour.time)} />
                     <StormGlassDisplay forecast="fmi" waveDirection={forecastHour.waveDirection.fmi} waveHeight={forecastHour.waveHeight.fmi ?? 0}
-                        wavePeriod={forecastHour.wavePeriod.fmi ?? 0} swellHeight={forecastHour.swellHeight.fmi ?? 0} />
+                        wavePeriod={forecastHour.wavePeriod.fmi ?? 0} swellHeight={forecastHour.swellHeight.fmi ?? 0} hasDaylight={hasDaylight(forecastHour.time)} />
                     <StormGlassDisplay forecast="icon" waveDirection={forecastHour.waveDirection.icon} waveHeight={forecastHour.waveHeight.icon ?? 0}
-                        wavePeriod={forecastHour.wavePeriod.icon ?? 0} swellHeight={forecastHour.swellHeight.icon ?? 0} />
+                        wavePeriod={forecastHour.wavePeriod.icon ?? 0} swellHeight={forecastHour.swellHeight.icon ?? 0} hasDaylight={hasDaylight(forecastHour.time)} />
                 </div>
             </div>
         </div>

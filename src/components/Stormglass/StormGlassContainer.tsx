@@ -4,6 +4,7 @@ import { StormGlassHour } from "./StormGlassHour";
 import { useEffect, useState } from "react";
 import { getStormGlassData } from "../../utils/http";
 import { Response } from "../../App";
+import { hasDaylight } from "../../utils/daylight";
 
 const dateThreeDaysFromNow = (): string => {
     const date = new Date();
@@ -22,6 +23,8 @@ interface Props {
 export const StormGlassContainer = ({ longitude, latitude, spot, data, setData }: Props) => {
     const params = "swellDirection,swellHeight,swellPeriod,waveDirection,waveHeight,wavePeriod";
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState("");
+    const [limitedData, setLimitedData] = useState<Response[]>();
 
 
 
@@ -30,27 +33,38 @@ export const StormGlassContainer = ({ longitude, latitude, spot, data, setData }
             if (data === undefined) {
                 setLoading(true);
                 const response = await getStormGlassData(latitude, longitude, params, dateThreeDaysFromNow());
-                if (response) {
-                    console.log(spot);
-                    setData(response.data);
+                if (!response.ok) {
+                    if (response.status === 204) {
+                        setLoading(false);
+                        return setError("Robin nu har du tryckt för mycket!!")
+                    }
+                    setLoading(false);
+                    return setError("Error");
                 }
-                setLoading(false);
-                return;
+                if (response.data) {
+                    setData(response.data);
+                    setLoading(false);
+                    setLimitedData(response.data.hours.filter((hour: any, i: number) => hasDaylight(hour.time) || i % 3 === 0));
+                    return;
+                }
             }
         }
         fetch();
     }, [])
 
+
+
     return (
         <div>
             {loading ? <span className="robin">Laddar</span> :
                 <div>
-                    {data ?
-                        <Carousel slides={data.hours.map((hour: any) => {
+                    {limitedData &&
+                        <Carousel slides={limitedData.map((hour: any) => {
                             return (<StormGlassHour forecastHour={hour} />)
                         })
-                        } />
-                        : <span className="robin"> Robin nu har du tryckt för mycket!! </span>
+                        } />}
+
+                    error && {<span className="robin"> {error} </span>
                     }
                 </div>
             }
