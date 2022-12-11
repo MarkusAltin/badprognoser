@@ -64,7 +64,7 @@ export const StormGlassContainer = ({ longitude, latitude, spot, data, setData }
                         })
                         } />}
 
-                    error && {<span className="robin"> {error} </span>
+                    {error && <span className="robin"> {error} </span>
                     }
                 </div>
             }

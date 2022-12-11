@@ -27,7 +27,7 @@ export const Bottenhavet = ({ holmogaddData, salusandData, skagsuddeData, setHol
       <div className="border">
         <Accordion title="Holmögadd" content={
           <>
-            <Accordion title="StormGlass" content={
+            <Accordion title="Prognoser" content={
               <StormGlassContainer latitude={holmo.lat} longitude={holmo.lon} spot="holmogadd" data={holmogaddData} setData={(data) => setHolmogaddData(data)} />
             } />
             <Accordion title="Windfinder" content={
@@ -43,7 +43,7 @@ export const Bottenhavet = ({ holmogaddData, salusandData, skagsuddeData, setHol
       <div className="border">
         <Accordion title="Salusand" content={
           <>
-            <Accordion title="StormGlass" content={
+            <Accordion title="Prognoser" content={
               <StormGlassContainer latitude={salusand.lat} longitude={salusand.lon} spot="salusand" data={salusandData} setData={(data) => setSalusandData(data)} />
             } />
             <Accordion title="Windfinder" content={
@@ -60,7 +60,7 @@ export const Bottenhavet = ({ holmogaddData, salusandData, skagsuddeData, setHol
       <div className="border">
         <Accordion title="Skagsudde" content={
           <>
-            <Accordion title="StormGlass" content={
+            <Accordion title="Prognoser" content={
               <StormGlassContainer latitude={skagsudde.lat} longitude={skagsudde.lon} spot="skagsudde" data={skagsuddeData} setData={(data) => setSkagsuddeData(data)} />
             } />
             <Accordion title="Windfinder" content={
@@ -76,7 +76,7 @@ export const Bottenhavet = ({ holmogaddData, salusandData, skagsuddeData, setHol
       <div className="border">
         <Accordion title="Härnösand" content={
           <>
-            <Accordion title="StormGlass" content={
+            <Accordion title="Prognoser" content={
               <StormGlassContainer latitude={harnosand.lat} longitude={harnosand.lon} spot="skagsudde" data={skagsuddeData} setData={(data) => setSkagsuddeData(data)} />
             } />
             <Accordion title="Windfinder" content={
@@ -89,6 +89,14 @@ export const Bottenhavet = ({ holmogaddData, salusandData, skagsuddeData, setHol
             </div>
           </>
         } /></div>
+      <Accordion title="Windy vindkarta" content={
+        <div style={{ textAlign: "center" }}>
+          <iframe title="bottenhavet-windy.widget" className="windy-widget"
+            src="https://embed.windy.com/embed2.html?lat=61.860&lon=19.058&detailLat=63.825&detailLon=20.256&width=650&height=450&zoom=6&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1"
+            frameBorder="0" />
+        </div>
+      }
+      />
       <Havsis spot={"salusand"} />
     </div>
   )

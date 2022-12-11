@@ -26,7 +26,7 @@ export const Bottenviken = ({ bjuroklubbData, ratanData, holmonData, setBjuroklu
       <div className="border">
         <Accordion title="Bjuröklubb" content={
           <>
-            <Accordion title="StormGlass" content={
+            <Accordion title="Prognoser" content={
               <StormGlassContainer latitude={bjur.lat} longitude={bjur.lon} spot="bjuroklubb" data={bjuroklubbData} setData={(data) => setBjuroklubbData(data)} />
             } />
             <Accordion title="Windfinder" content={
@@ -42,7 +42,7 @@ export const Bottenviken = ({ bjuroklubbData, ratanData, holmonData, setBjuroklu
       <div className="border">
         <Accordion title="Ratan" content={
           <>
-            <Accordion title="StormGlass" content={
+            <Accordion title="Prognoser" content={
               <StormGlassContainer latitude={ratan.lat} longitude={ratan.lon} spot="ratan" data={ratanData} setData={(data) => setRatanData(data)} />
             } />
             <div className="spot-links">
@@ -55,7 +55,7 @@ export const Bottenviken = ({ bjuroklubbData, ratanData, holmonData, setBjuroklu
       <div className="border">
         <Accordion title="Holmön" content={
           <>
-            <Accordion title="StormGlass" content={
+            <Accordion title="Prognoser" content={
               <StormGlassContainer latitude={holm.lat} longitude={holm.lon} spot="holmon" data={holmonData} setData={(data) => setHolmonData(data)} />
             } />
             <Accordion title="Windfinder" content={
@@ -68,6 +68,14 @@ export const Bottenviken = ({ bjuroklubbData, ratanData, holmonData, setBjuroklu
             </div>
           </>
         } /> </div>
+      <Accordion title="Windy vindkarta" content={
+        <div style={{ textAlign: "center" }}>
+          <iframe title="bottenviken-windy-widget" className="windy-widget"
+            src="https://embed.windy.com/embed2.html?lat=64.235&lon=22.299&detailLat=63.825&detailLon=20.256&width=650&height=450&zoom=7&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1"
+            frameBorder="0" />
+        </div>
+      }
+      />
       <Havsis spot={"bjuroklubb"} />
     </div>
   )
