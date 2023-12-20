@@ -6,6 +6,8 @@ import { SmhiContainer } from "../../components/Smhi/Smhi"
 import { StormGlassContainer } from "../../components/Stormglass/StormGlassContainer"
 import { WindfinderWidget } from "../../components/Windfinder/WindfinderWidget"
 import { WindyLink } from "../../components/Windy/WindyLink"
+import { WindyApp } from "../../components/WindyApp/WindyApp"
+import { Yr } from "../../components/Yr/Yr"
 
 interface BottenhavetProps {
   holmogaddData?: Response;
@@ -33,6 +35,12 @@ export const Bottenhavet = ({ holmogaddData, salusandData, skagsuddeData, setHol
             <Accordion title="Windfinder" content={
               <WindfinderWidget location="holmögadd" />
             } />
+            <Accordion title="Windy App" content={
+              <WindyApp location="holmögadd" />
+            } />
+             <Accordion title="Yr" content={
+              <Yr location="rovogern" />
+            } />
             <div className="spot-links">
               <SmhiContainer spot={"rovogern"} />
               <BalticSeaBuoy spot={"rovogern"} />
@@ -48,6 +56,9 @@ export const Bottenhavet = ({ holmogaddData, salusandData, skagsuddeData, setHol
             } />
             <Accordion title="Windfinder" content={
               <WindfinderWidget location="salusand" />
+            } />
+            <Accordion title="Yr" content={
+              <Yr location="salusand" />
             } />
             <div className="spot-links">
               <SmhiContainer spot={"salusand"} />
@@ -66,6 +77,9 @@ export const Bottenhavet = ({ holmogaddData, salusandData, skagsuddeData, setHol
             <Accordion title="Windfinder" content={
               <WindfinderWidget location="skagsudde" />
             } />
+            <Accordion title="Yr" content={
+              <Yr location="skagsudde" />
+            } />
             <div className="spot-links">
               <SmhiContainer spot={"skagsudde"} />
               <BalticSeaBuoy spot={"skagsudde"} />
@@ -81,6 +95,9 @@ export const Bottenhavet = ({ holmogaddData, salusandData, skagsuddeData, setHol
             } />
             <Accordion title="Windfinder" content={
               <WindfinderWidget location="harnosand" />
+            } />
+            <Accordion title="Yr" content={
+              <Yr location="harnosand" />
             } />
             <div className="spot-links">
               <SmhiContainer spot={"harnosand"} />

@@ -6,6 +6,7 @@ import { SmhiContainer } from "../../components/Smhi/Smhi";
 import { StormGlassContainer } from "../../components/Stormglass/StormGlassContainer";
 import { WindfinderWidget } from "../../components/Windfinder/WindfinderWidget";
 import { WindyLink } from "../../components/Windy/WindyLink";
+import { Yr } from "../../components/Yr/Yr";
 
 interface BottenvikenProps {
   bjuroklubbData?: Response;
@@ -32,6 +33,9 @@ export const Bottenviken = ({ bjuroklubbData, ratanData, holmonData, setBjuroklu
             <Accordion title="Windfinder" content={
               <WindfinderWidget location="bjuröklubb" />
             } />
+            <Accordion title="Yr" content={
+              <Yr location="bjuroklubb" />
+            } />
             <div className="spot-links">
               <SmhiContainer spot={"bjuroklubb"} />
               <BalticSeaBuoy spot={"bjuroklubb"} />
@@ -44,6 +48,9 @@ export const Bottenviken = ({ bjuroklubbData, ratanData, holmonData, setBjuroklu
           <>
             <Accordion title="Prognoser" content={
               <StormGlassContainer latitude={ratan.lat} longitude={ratan.lon} spot="ratan" data={ratanData} setData={(data) => setRatanData(data)} />
+            } />
+            <Accordion title="Yr" content={
+              <Yr location="ratan" />
             } />
             <div className="spot-links">
               <SmhiContainer spot={"ratan"} />
@@ -60,6 +67,9 @@ export const Bottenviken = ({ bjuroklubbData, ratanData, holmonData, setBjuroklu
             } />
             <Accordion title="Windfinder" content={
               <WindfinderWidget location="holmön" />
+            } />
+            <Accordion title="Yr" content={
+              <Yr location="holmon" />
             } />
             <div className="spot-links">
               <SmhiContainer spot={"holmon"} />
